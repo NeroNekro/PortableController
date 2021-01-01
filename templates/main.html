@@ -1,0 +1,41 @@
+<html>
+    <head>
+        <link rel="shortcut icon" type="image/x-icon" href="http://{{ ip + ":" + port }}/www/favicon.ico">
+        <link rel="stylesheet" type="text/css" href="http://{{ ip + ":" + port }}/www/style.css">
+        <script src="http://{{ ip + ":" + port }}/www/style.js"></script>
+    </head>
+    <body>
+        <h1 align="center">// Portable Controller</h1>
+        <table class="tg">
+            <tr>
+                <th class="tg-baqh">Logo</th>
+                <th class="tg-0lax">Game</th>
+                <th class="tg-0lax">GameVersion</th>
+                <th class="tg-0lax">Description</th>
+                <th class="tg-0lax">Version</th>
+                <th class="tg-0lax">Author</th>
+                <th class="tg-0lax">Release</th>
+                <th class="tg-0lax">Devices</th>
+                <th class="tg-0lax">Link</th>
+            </tr>
+            {% for i in range(data|length) %}
+            <tr>
+                <td class="tg-0lax"><a href="http://{{ ip + ":" + port }}/www/{{ data[i]["dir"] }}/index.html"><img src="http://{{ ip + ":" + port }}/www/{{ data[i]["dir"] }}/logo.png" width="64px"> </td>
+                <td class="tg-0lax">{{ data[i]["game"] }}</td>
+                <td class="tg-0lax">{{ data[i]["gameversion"]}}</td>
+                <td class="tg-0lax">{{ data[i]["description"]}}</td>
+                <td class="tg-0lax">{{ data[i]["version"]}}</td>
+                <td class="tg-0lax">{{ data[i]["author"]}}</td>
+                <td class="tg-0lax">{{ data[i]["release"]}}</td>
+                <td class="tg-0lax">{{ data[i]["devices"]}}</td>
+                <td class="tg-0lax"><a href="{{ data[i]["url"]}}" target="_blank">Link</a></td></tr>
+            </tr>
+            {% endfor %}
+        </table>
+        <br>
+        <br>
+        <footer>
+            <a class="link" align="center" href="https://portable-controller.de" target="_blank">TJ 2020 - Portable-Controller.de</a>
+        </footer>
+    </body>
+</html>

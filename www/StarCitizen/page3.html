@@ -1,0 +1,45 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="content/starcitizen.css">
+        <meta name="viewport" content="minimal-ui, width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="viewport" content="width=device-width, user-scalable=no">
+        <meta http-equiv="Content-Security-Policy" content="default-src *; script-src * data:  'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline' blob:; img-src *; media-src *; font-src data:" />
+    </head>
+    <body>
+        <div class="nav" >
+            <div class="navButton">
+                <a href="index.html"><img src="content/Btn_Button5-1_n.png"></a>
+                <a href="page2.html"><img src="content/Btn_Button5-1_n.png"></a>
+                <a href="page3.html"><img src="content/Btn_Button5-3_yellow.png"></a>
+
+            </div>
+
+        </div>
+        <div class="window">
+            <div class="windowPanel">
+                <input type="image" class="button" src="content/Btn_tool_h.png" name="button" value="d" onclick="sendButton(this);">
+            </div>
+
+
+        </div>
+
+
+
+
+    <script src="../../theme/jquery.min.js"></script>
+    <script type='text/javascript'>
+        function sendButton(BTval) {
+            $.ajax({
+                type: "POST",
+                url: "../../controller.php",
+                data: "type=" + BTval.name + "&key=" + BTval.value
+            });
+        }
+    </script>
+
+    </body>
+</html>
+
+
+
