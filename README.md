@@ -16,7 +16,7 @@ If you want another port, you have to change the port number in config.ini and i
 
 ### What is the link to the server?
 
-http://YOUR-IP:PORT/www/TEMPLATE:NAME/index.html
+http://YOUR-IP:PORT/
 
 ### Which Buttons are available?
 F1-F12, a-z, 0-9, alt, shift, ctrl, del, enter, up, down, left, right
