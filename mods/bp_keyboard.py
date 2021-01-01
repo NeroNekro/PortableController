@@ -14,7 +14,8 @@ def single():
         th = threading.Thread(target=single_button, args=(key,))
         th.start()
     except:
-        print ("Error: unable to start thread")
+        print("Error: unable to start thread")
+    return
 
 @bp_keyboard.route('/multiple', methods=["POST"])
 def multiple():
@@ -27,6 +28,7 @@ def multiple():
         except:
             print("Error: unable to start thread")
         time.sleep(1)
+    return
 
 
 
@@ -42,6 +44,7 @@ def custom():
             except:
                 print("Error: unable to start thread")
             time.sleep(key["timer"])
+    return
 
 
 def single_button(key):

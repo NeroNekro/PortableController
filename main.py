@@ -12,6 +12,7 @@ from mods.bp_keyboard import bp_keyboard
 from mods.bp_joystick import bp_joystick
 import requests
 import webbrowser
+import sys
 serverRunning = []
 serverD = False
 
@@ -65,9 +66,10 @@ class GUI ():
                 self.log.write_log("ERROR", "Server won't start: " + str(e))
         else:
             try:
-                url = 'http://localhost:' + self.config["PORT"] + "/shutdown"
+                url = 'http://' + self.config["IP"] + ':' + self.config["PORT"] + "/shutdown"
                 requests.post(url)
                 serverD = False
+                print(self.getTime() + " - INFO: Server stopped")
             except Exception as e:
                 print(self.getTime() + " - Error: Server won't stop")
                 self.log.write_log("ERROR", "Server won't stop: " + str(e))
@@ -124,11 +126,14 @@ class GUI ():
 
 class SERVER ():
     def __init__(self, config):
+        cli = sys.modules['flask.cli']
+        cli.show_server_banner = lambda *x: None
         self.app = Flask(__name__, static_folder="www")
         self.app.config["IP"] = config["IP"]
         self.app.config["PORT"] = config["PORT"]
         self.app.config["uiFolder"] = config["uiFolder"]
         self.app.config["modFolder"] = config["modFolder"]
+        self.app.logger.disabled = True
         self.app.register_blueprint(bp_start)
         self.app.register_blueprint(bp_keyboard, url_prefix="/keyboard")
         self.app.register_blueprint(bp_joystick, url_prefix="/joystick")
