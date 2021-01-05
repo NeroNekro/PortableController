@@ -156,8 +156,8 @@ class GUI ():
 
 class SERVER ():
     def __init__(self, config):
-        cli = sys.modules['flask.cli']
-        cli.show_server_banner = lambda *x: None
+        #cli = sys.modules['flask.cli']
+        #cli.show_server_banner = lambda *x: None
         self.app = Flask(__name__, static_folder="www")
         self.app.config["IP"] = config["IP"]
         self.app.config["PORT"] = config["PORT"]

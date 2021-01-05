@@ -1,1 +1,8 @@
-2021-01-03 17:27:02,141 INFO -- Read Config SUCCESSFUL
+2021-01-05 23:58:11,421 INFO -- Read Config SUCCESSFUL
+2021-01-05 23:58:14,868 INFO -- Server started
+2021-01-05 23:58:14,903  * Running on http://192.168.1.129:80/ (Press CTRL+C to quit)
+2021-01-05 23:58:18,590 192.168.1.129 - - [05/Jan/2021 23:58:18] "[37mGET /www/StarCitizen/index.html HTTP/1.1[0m" 200 -
+2021-01-05 23:58:19,710 192.168.1.129 - - [05/Jan/2021 23:58:19] "[36mGET /www/StarCitizen/index.html HTTP/1.1[0m" 304 -
+2021-01-05 23:58:21,093 192.168.1.129 - - [05/Jan/2021 23:58:21] "[35m[1mPOST /joystick/axis HTTP/1.1[0m" 500 -
+2021-01-05 23:58:25,933 192.168.1.129 - - [05/Jan/2021 23:58:25] "[35m[1mPOST /joystick/axis HTTP/1.1[0m" 500 -
+2021-01-05 23:58:26,518 192.168.1.129 - - [05/Jan/2021 23:58:26] "[35m[1mPOST /joystick/axis HTTP/1.1[0m" 500 -

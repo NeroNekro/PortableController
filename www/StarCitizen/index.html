@@ -18,8 +18,8 @@
         </div>
         <div class="window">
             <div class="windowPanel">
-                <input type="image" class="button" src="content/icons/light.png" name="button" value="t" onclick="sendButton(this);">
-                <input type="image" class="button" src="content/icons/comm.png" name="button" value="F3" onclick="sendText(this);">
+                <input type="image" class="button" src="content/icons/light.png" name="button" value="t" onclick="sendjButton(this);">
+                <input type="image" class="button" src="content/icons/comm.png" name="button" value="F3" onclick="sendAxis(this);">
                 <input type="image" class="button" src="content/icons/navi.png" name="button" value="F3" onclick="sendButton(this);">
                 <input type="image" class="button" src="content/icons/shield.png" name="button" value="" onclick="sendButton(this);">
                 <input type="image" class="button" src="content/icons/power.png" name="button" value="i" onclick="sendButton(this);">
@@ -57,16 +57,27 @@
             });
         }
 
-        function sendText(BTval) {
+
+        function sendjButton(BTval) {
 
             $.ajax({
                 type: "POST",
-                url: "/text",
-                data: "chatOpen=" + "t" + "&chatText=" + "/Dance" + "&chatSend=" + "Enter"
+                url: "/joystick/button",
+                data: "button=" + "1" + "&device=" + "1"
 
             });
         }
-    </script>aaaaaaaaaaaaaaaa
+
+        function sendAxis(BTval) {
+
+            $.ajax({
+                type: "POST",
+                url: "/joystick/axis",
+                data: "axis=" + "1" + "&device=" + "1" + "&percent=" + "20"
+
+            });
+        }
+    </script>
 
     </body>
 </html>
